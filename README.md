@@ -174,11 +174,6 @@ uvicorn src.main:app --reload
 4. Push to the branch
 5. Open a Pull Request
 
-## Live Demo
-
-- Frontend: [https://fictional-product.vercel.app](https://fictional-product.vercel.app)
-- Backend API: [https://fictional-product-api.herokuapp.com](https://fictional-product-api.herokuapp.com)
-
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details
