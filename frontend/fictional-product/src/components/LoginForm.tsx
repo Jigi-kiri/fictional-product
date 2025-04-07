@@ -109,51 +109,53 @@ const LoginForm: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="signup-form">
-      <div className="form-header">
-        <h2>Create Account</h2>
-        <p>Join our community and get started</p>
-      </div>
-      <div className="form-group">
-        <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          id="name"
-          value={name}
-          onChange={(e) => handleInputChange('name', e.target.value)}
-          disabled={isLoading}
-        />
-        {errors.name && <p className="error-message">{errors.name}</p>}
-      </div>
-      <div className="form-group">
-        <label htmlFor="email">Email Address:</label>
-        <input
-          type="email"
-          id="email"
-          value={email}
-          onChange={(e) => handleInputChange('email', e.target.value)}
-          disabled={isLoading}
-        />
-        {errors.email && <p className="error-message">{errors.email}</p>}
-      </div>
-      <div className="form-group">
-        <label htmlFor="pricingPlan">Preferred Pricing Plan:</label>
-        <select
-          id="pricingPlan"
-          value={pricingPlan}
-          onChange={(e) => handleInputChange('pricingPlan', e.target.value)}
-          disabled={isLoading}
-        >
-          <option value="Monthly">Monthly</option>
-          <option value="Annual">Annual</option>
-        </select>
-        {errors.pricingPlan && <p className="error-message">{errors.pricingPlan}</p>}
-      </div>
-      {errors.api && <p className="error-message api-error">{errors.api}</p>}
-      <button type="submit" disabled={!isValid || isLoading}>
-        {isLoading ? 'Submitting...' : 'Submit'}
-      </button>
-    </form>
+    <div className="form-container">
+      <form onSubmit={handleSubmit} className="signup-form">
+        <div className="form-header">
+          <h2>Create Account</h2>
+          <p>Join our community and get started</p>
+        </div>
+        <div className="form-group">
+          <label htmlFor="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            value={name}
+            onChange={(e) => handleInputChange('name', e.target.value)}
+            disabled={isLoading}
+          />
+          {errors.name && <p className="error-message">{errors.name}</p>}
+        </div>
+        <div className="form-group">
+          <label htmlFor="email">Email Address:</label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => handleInputChange('email', e.target.value)}
+            disabled={isLoading}
+          />
+          {errors.email && <p className="error-message">{errors.email}</p>}
+        </div>
+        <div className="form-group">
+          <label htmlFor="pricingPlan">Preferred Pricing Plan:</label>
+          <select
+            id="pricingPlan"
+            value={pricingPlan}
+            onChange={(e) => handleInputChange('pricingPlan', e.target.value)}
+            disabled={isLoading}
+          >
+            <option value="Monthly">Monthly</option>
+            <option value="Annual">Annual</option>
+          </select>
+          {errors.pricingPlan && <p className="error-message">{errors.pricingPlan}</p>}
+        </div>
+        {errors.api && <p className="error-message api-error">{errors.api}</p>}
+        <button type="submit" disabled={!isValid || isLoading}>
+          {isLoading ? 'Submitting...' : 'Submit'}
+        </button>
+      </form>
+    </div>
   );
 };
 
